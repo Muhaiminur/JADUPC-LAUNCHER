@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class App_List_Adapter extends RecyclerView.Adapter<App_List_Adapter.MyViewHolder> {
@@ -85,5 +86,10 @@ public class App_List_Adapter extends RecyclerView.Adapter<App_List_Adapter.MyVi
     @Override
     public int getItemCount() {
         return stringList.size();
+    }
+
+    public void filterList(ArrayList<String> filterdNames) {
+        this.stringList = filterdNames;
+        notifyDataSetChanged();
     }
 }
